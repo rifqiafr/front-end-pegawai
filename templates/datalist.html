@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Kepegawaian</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Data Kepegawaian</h2>
+        <a href="/data/create" class="btn btn-primary float-right mb-3">Tambah Pegawai</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Jenis Kelamin</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.jk }}</td>
+                    <td>{{ employee.address }}</td>
+                    <td>
+                        <a href="/data/{{ employee.employee_id }}" class="btn btn-info btn-sm">Detail</a>
+                        <a href="/data/{{ employee.employee_id }}/update" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="/data/{{ employee.employee_id }}/delete" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

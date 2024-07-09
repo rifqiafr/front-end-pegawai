@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pegawai</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Detail Pegawai</h2>
+        <table class="table">
+            <tr>
+                <th>ID Pegawai</th>
+                <td>{{ employee.employee_id }}</td>
+            </tr>
+            <tr>
+                <th>Nama</th>
+                <td>{{ employee.name }}</td>
+            </tr>
+            <tr>
+                <th>Umur</th>
+                <td>{{ employee.age }}</td>
+            </tr>
+            <tr>
+                <th>NIK</th>
+                <td>{{ employee.nik }}</td>
+            </tr>
+            <tr>
+                <th>Alamat</th>
+                <td>{{ employee.address }}</td>
+            </tr>
+            <tr>
+                <th>Jenis Kelamin</th>
+                <td>{{ employee.jk }}</td>
+            </tr>
+            <tr>
+                <th>No HP</th>
+                <td>{{ employee.hp }}</td>
+            </tr>
+            <tr>
+                <th>Tanggal Lahir</th>
+                <td>{{ employee.tgl_lahir }}</td>
+            </tr>
+        </table>
+        <a href="/data" class="btn btn-secondary">Kembali</a>
+    </div>
+</body>
+</html>

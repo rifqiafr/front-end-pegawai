@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hapus Pegawai</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Hapus Pegawai</h2>
+        <p>Apakah Anda yakin ingin menghapus pegawai {{ employee.name }}?</p>
+        <form action="/data/{{ employee.employee_id }}/delete" method="post">
+            <button type="submit" class="btn btn-danger">Hapus</button>
+            <a href="/data" class="btn btn-secondary">Kembali</a>
+        </form>
+    </div>
+</body>
+</html>

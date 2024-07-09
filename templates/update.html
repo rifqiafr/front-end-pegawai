@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pegawai</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Pegawai</h2>
+        <form action="/data/{{ employee.employee_id }}/update" method="post">
+            <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ employee.name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Umur:</label>
+                <input type="number" class="form-control" id="age" name="age" value="{{ employee.age }}" required>
+            </div>
+            <div class="form-group">
+                <label for="nik">NIK:</label>
+                <input type="text" class="form-control" id="nik" name="nik" value="{{ employee.nik }}" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Alamat:</label>
+                <input type="text" class="form-control" id="address" name="address" value="{{ employee.address }}" required>
+            </div>
+            <div class="form-group">
+                <label for="jk">Jenis Kelamin:</label>
+                <input type="text" class="form-control" id="jk" name="jk" value="{{ employee.jk }}" required>
+            </div>
+            <div class="form-group">
+                <label for="hp">No HP:</label>
+                <input type="text" class="form-control" id="hp" name="hp" value="{{ employee.hp }}" required>
+            </div>
+            <div class="form-group">
+                <label for="tgl_lahir">Tanggal Lahir:</label>
+                <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" value="{{ employee.tgl_lahir }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+        </form>
+    </div>
+</body>
+</html>
